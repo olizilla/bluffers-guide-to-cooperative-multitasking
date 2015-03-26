@@ -7,14 +7,15 @@ some (js-centric) definitions
 # multitasking
 - Doing several things at once.
 
-> Multitasking is a method to allow multiple processes to share processors (CPUs) and other system resources.
-> Each CPU executes a single task at a time.
+> Multitasking allows multiple processes to share CPUs and other system resources. Each CPU executes a single task at a time.
 
 - time-sharing
 
 > Multitasking allows each processor to switch between processes that are being executed without having to wait for each task to finish.
 
 # Process
+> an instance of a computer program that is being executed
+
 - A program, being executed
 
 > A computer program is a passive collection of instructions; a process is the actual execution of those instructions.
@@ -26,6 +27,9 @@ some (js-centric) definitions
 
 
 ```sh
+ps | grep node | wc -l
+# 6
+
 node &
 ps | grep node | wc -l
 # 7
@@ -92,6 +96,9 @@ Like any other loop. repeats the same process over and over...
 
 > It works by making a request to some internal or external "event provider" (which generally blocks the request until an event has arrived), and then it calls the relevant event handler ("dispatches the event").
 
+
+--------------------------------------------------------------------------------
+
 # Experiments
 
 **"Don't block the even loop"**
@@ -102,6 +109,14 @@ People who block the event loop get unresponsive, janky UIs...
 People who don't have silky animations, snappy apps and happy users.
 
 Which do you want to be?
+
+
+
+
+
+
+
+
 
 Ok. Some background.
 
@@ -114,6 +129,16 @@ like me, it can only concentrate on one thing at a time.
 _A single thread of execution_
 
 when you call a function, the lines of code in that function are executed.
+
+
+
+
+
+
+
+
+
+
 
 if you're asked to do one, small thing, and it's a good day, and you're not hungry, you'll probably get it done pretty quick.
 if you're asked to one billion things (1,000,000,000) you'll probably take a while. If you're super disciplined about it, and don't take any breaks, it'll still take so long that your friends and family will start to get worried. You'll be become, unresponsive...
@@ -152,15 +177,29 @@ function doThings (many) {
 
 so, as the procrastinators know all too well, even doing nothing can take ages, if you do enough of it.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 What happens if we need to do 2 things at once?
 
-_A single thread of execution_ (throwback)
+_A single thread of execution_
 
 Well, what if we wanted say, a server to handle 2 different users... AT THE SAME TIME! *gasps*
 
 Servers have to handle the demands of multiple users...
 
-Let's wrap our `doThings` function up as a super simple server.
+Let's wrap our `doThings` function up as a bad server.
 
 ```js
 var http = require('http')
@@ -183,6 +222,15 @@ function doThings (many) {
 ```
 
 This is node, or _a_ node, or iojs, or server-side javascript, if you're not into the whole brevity thing.
+
+
+
+
+
+
+
+
+
 
 To test it out let's fire it up and use the ancient magic that is `curl` to make an h t t p request...
 
@@ -210,12 +258,30 @@ The `time` command is like a stopwatch for your cli; it prints out how long it t
 
 So we've got a server that's painfully slow with 1 concurrent user (note, 1 is not concurrent.)
 
+
+
+
+
+
+
+
+
+
 What were we trying to do...
 
 > "What happens if we need to do 2 things at once?"
 _A single thread of execution_ (throwback)
 
 huh. What if 2 users access the server at the same time!
+
+
+
+
+
+
+
+
+
 
 To experiment with this we could manually fire up some browsers like animals or do a webdrivers or distribute some malware...
 

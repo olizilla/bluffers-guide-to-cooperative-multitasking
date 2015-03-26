@@ -1,0 +1,69 @@
+// New to Stylus? Check out http://learnboost.github.io/stylus
+// Use modern CSS thanks to Autoprefixer: https://github.com/ai/autoprefixer
+
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+
+@import 'prism/themes/prism-okaidia.css'
+// Check out "bower_components/prism/themes/" for available themes
+
+blockquote
+  padding: 0 20px 20px;
+  font-style:italic;
+
+pre
+  text-align:left;
+  font-size:1.4em;
+
+.logo
+  display:block;
+  width:500px;
+  height:300px;
+
+.logo.small
+  width:200px;
+  height:100px;
+
+.logo .meteor
+  display:block;
+  background: url(../images/meteor-london-logo-on-dark.svg) no-repeat center center;
+  height: 100%;
+  background-size: 100% auto;
+  color:transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+.muted
+  opacity:0.3;
+
+.muted:hover
+  opacity:1;
+
+// backgrounds
+
+.meteorday
+  background: url(http://meteorday.com/img/intro-bg.jpg) no-repeat scroll 0 0;
+  background-size: cover;
+
+.excited
+  background: url(../images/excited-dog.jpg) no-repeat scroll 0 0;
+  background-size: cover;
+
+.science
+  background: url(../images/science-cat.jpg) no-repeat scroll 0 0;
+  background-size: cover;
+
+.threads-1
+  background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Multithreaded_process.svg/1000px-Multithreaded_process.svg.png) no-repeat scroll 0 0;
+  background-size: contain;
+
+.threads-2
+  background: url(http://www.cs.ucla.edu/classes/spring12/cs111/scribe/7a/Process_threads.png) no-repeat scroll 0 0;
+  background-size: contain;
+
+.threads-node
+  background: url(http://island94.org/2012/12/A-gentle-conceptual-introduction-to-Nodejs/typical-vs-node-server-600x344-f4b10fc3.png) no-repeat scroll 0 0;
+  background-size: contain;

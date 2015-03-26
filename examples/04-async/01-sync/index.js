@@ -15,7 +15,9 @@ http.createServer(function (request, response) {
   // ok go!
   response.end(result + '\n')
 
-}).listen(1339)
+}).listen(1341, function (err) {
+  console.log('sync server on: http://127.0.0.1:1341')
+})
 
 function pick (path) {
   var words = fs.readFileSync('/usr/share/dict/' + path, "utf8");

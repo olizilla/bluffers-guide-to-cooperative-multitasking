@@ -1,0 +1,217 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Meteor London
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+      
+  body
+    article
+      section
+        header.logo
+          div.meteor Meteor London
+
+      section.emphatic-text(data-bespoke-backdrop='meteorday')
+        h2 A bluffers guide to...
+        h1 Cooperative multitasking
+
+      section
+        h2 Part 1
+
+      section
+        h2 process, thread, fiber, async, callback, event-loop, <br> OMG, WTF, BBQ
+      
+      section
+        h2 Caveats...
+      
+      section(data-bespoke-backdrop='meteorday')
+        h2 I have no idea what I'm doing, but...
+      
+      section(data-bespoke-backdrop='excited')
+        h2 It'll be fun.
+        
+      section
+        h2 Some definitons
+        
+      section
+        h3 define
+        h1 multitasking
+        
+      section
+        blockquote "Multiple processes are performed during the same period of time – they are executed concurrently (in overlapping time periods, new tasks starting before others have ended) instead of sequentially"
+        a.muted(href="http://en.wikipedia.org/wiki/Computer_multitasking") en.wikipedia.org/wiki/Computer_multitasking
+
+      section
+        h3 also of note:
+        
+      section 
+        blockquote "Multitasking allows multiple processes to share CPUs and other system resources. Each CPU executes a single task at a time."
+      
+      section
+        blockquote "Multitasking allows each processor to switch between processes that are being executed without having to wait for each task to finish."
+      
+      section
+        h2 multitasking 
+        ul
+          li Doing several things at once.
+          li Time-sharing the system resources.
+          li Defined in terms of "processes".
+        
+      section
+        h2 ...
+        
+      section
+        h3 Define
+        h1 Process
+      
+      section
+        h2 three will be a test later
+        
+      section
+        h3 Define
+        h1 Process
+      
+      section
+        blockquote "An instance of a computer program that is being executed"
+        blockquote "A program is a passive collection of instructions; a process is the actual execution of those instructions."
+        a.muted(href='http://en.wikipedia.org/wiki/Process_(computing)') en.wikipedia.org/wiki/Process_(computing)
+
+      section
+        h3 examples
+        
+      section
+        pre <code>node</code>, <code>mongod</code>, <code>meteor</code>
+        p &nbsp;
+        p (meteor starts at least 2 process, one node, one mongo.)
+
+      section
+        h3 In action: The shell
+        pre
+          code.
+            ps | grep node | wc -l
+
+      section
+        h3 In action: Node
+        pre
+          code.
+            process.title
+
+      section
+        h3 if we can inpsect the process, then what are we?
+          
+      section
+        h3 also of note
+        
+      section
+        blockquote "Multiple threads can exist within the same process and share resources"
+        a.muted(href='http://en.wikipedia.org/wiki/Thread_(computing)') en.wikipedia.org/wiki/Thread_(computing)
+      
+      section
+        h2 process
+        ul
+          li Data &amp; code for a running program.
+          li Started and stopped at our whim by the operating system.
+          li Sharing CPU time, but no state. Isolated from each other.
+          li may contain threads...
+
+      section
+        h3 Define
+        h1 Thread
+
+      section
+        blockquote Smallest sequence of programmed instructions that can be managed independently
+        a.muted(href='http://en.wikipedia.org/wiki/Thread_(computing)') en.wikipedia.org/wiki/Thread_(computing)
+      
+      section
+        blockquote ...multiple threads within a process share process state as well as memory and other resources.
+      
+      section
+        blockquote Processes are typically independent, while threads exist as subsets of a process
+        a.muted(href='http://en.wikipedia.org/wiki/Thread_(computing)') en.wikipedia.org/wiki/Thread_(computing)
+      
+      section
+        h3 perhaps a diagram will help
+      
+      section(data-bespoke-backdrop='threads-1')
+      
+      section
+        h3 Perhaps this one?
+        
+      section(data-bespoke-backdrop='threads-2')
+          
+      section
+        h3 what about JavaScript?
+          
+      section(data-bespoke-backdrop='threads-node')
+        
+      section
+        h3 and so the folklore goes:
+        blockquote "JS has a single thread of execution"
+      
+      section
+        h2 enhance
+        
+      section
+        h2 JS has a single thread of execution visible to scripts
+        a.muted(href="http://stackoverflow.com/a/2734311") stackoverflow.com/a/2734311
+        
+      section
+        h3 better quote sources are welcome.
+      
+      section
+        h2 Thread
+        ul
+          li Smallest sequence of instructions that can be managed independently
+          li A JavaScript process has just 1.
+          li But it also has an event loop...
+          
+      section
+        h2 ...
+          
+      section
+        h3 Define
+        h1 Event loop
+      
+      section
+        blockquote a programming construct that waits for and dispatches events or messages in a program
+      
+      section
+        h2 Like any other loop. repeats the same process over and over...
+      
+      section  
+        blockquote It works by making a request to some internal or external "event provider" (which generally blocks the request until an event has arrived), and then it calls the relevant event handler ("dispatches the event").
+      
+      section
+        blockquote "Don't block the event loop"
+        p Winston Churchill
+      
+      section.emphatic-text(data-bespoke-backdrop='science') 
+        h1 Experiments!
+      
+      section.emphatic-text(data-bespoke-backdrop='excited') 
+        h2 Let's block the event loop!
+      
+      section
+        h2 ...
+      
+      section
+        h3 an aside
+    
+      section
+        h2 Everyone has 
+        h2 >=1 
+        h2 talk in them  
+      
+      section
+        h2 Meteor London
+        h3 give a talk. tell a friend.
+
+      section
+        h3 End of part 1 of...
+      
+      section.emphatic-text(data-bespoke-backdrop='meteorday')
+        h2 A bluffers guide to...
+        h1 Cooperative multitasking  
+
+script(src='build/build.js')
