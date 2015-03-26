@@ -6,14 +6,17 @@ some (js-centric) definitions
 
 # multitasking
 - Doing several things at once.
+
 > Multitasking is a method to allow multiple processes to share processors (CPUs) and other system resources.
 > Each CPU executes a single task at a time.
 
 - time-sharing
+
 > Multitasking allows each processor to switch between processes that are being executed without having to wait for each task to finish.
 
 # Process
 - A program, being executed
+
 > A computer program is a passive collection of instructions; a process is the actual execution of those instructions.
 
 `node`,
@@ -47,6 +50,7 @@ but if we can look at the process information, then what are we?
 - may contain threads...
 
 # Thread
+
 > Processes are typically independent, while threads exist as subsets of a process
 > multiple threads within a process share process state as well as memory and other resources
 http://en.wikipedia.org/wiki/Thread_(computing)
@@ -62,34 +66,37 @@ console.log('ok, I\'m done now')
 The folklore goes:
 _"JS has a single thread of execution"_
 
-
-
-
-
-
 Or more accurately:
-> a single thread of execution visible to scripts(*)
+> a single thread of execution visible to scripts^
 http://stackoverflow.com/a/2734311
 
 executes our functions, synchronusly
 
+# Other definitions
 
-# subroutine
-a function or method
+- subroutine: a function or method
 
-# Fiber
-managed by the process
+- Fiber
+> "a particularly lightweight thread of execution"
+also, not a thread.
 
+- sync
+- async
 
-# syncronous
+# Event loop
 
-# asynchronous
+> a programming construct that waits for and dispatches events or messages in a program
+http://en.wikipedia.org/wiki/Event_loop
 
+Like any other loop. repeats the same process over and over...
 
+> It works by making a request to some internal or external "event provider" (which generally blocks the request until an event has arrived), and then it calls the relevant event handler ("dispatches the event").
+
+# Experiments
 
 **"Don't block the even loop"**
 
-What's an event loop and why should I care?
+What really _is_ an event loop and why should I care?
 
 People who block the event loop get unresponsive, janky UIs...
 People who don't have silky animations, snappy apps and happy users.
