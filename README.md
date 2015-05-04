@@ -106,7 +106,7 @@ Like any other loop. repeats the same process over and over...
 What really _is_ an event loop and why should I care?
 
 People who block the event loop get unresponsive, janky UIs...
-People who don't have silky animations, snappy apps and happy users.
+People who do have silky animations, snappy apps and happy users.
 
 Which do you want to be?
 
@@ -210,7 +210,7 @@ http.createServer(function (request, response) {
   // I do some things that may take a while...
   var results = doThings(1e9)
   response.end(results + '\n')
-}).listen(1337)
+}).listen(1300)
 
 // Things take a while to do...
 function doThings (many) {
@@ -445,6 +445,7 @@ http://neilk.net/blog/2013/04/30/why-you-should-use-nodejs-for-CPU-bound-tasks/
 https://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/
 https://github.com/alanning/meteor-load-test
 http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 
 
 ## Notes
